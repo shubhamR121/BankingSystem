@@ -1,0 +1,83 @@
+<h2 align="center" style="color:blue;">Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+<center>
+<div>
+  <div class="field">
+    <%= f.label :First_Name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Last_Name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Password %><br />
+    <%= f.password_field :encrypted_password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Fathers_Name %><br />
+    <%= f.text_field :fathers_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Mothers_Name %><br />
+    <%= f.text_field :mothers_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Occupation %><br />
+    <%= f.text_field :occupation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Fathers_Occupation %><br />
+    <%= f.text_field :fathers_occupation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Mothers_Occupation %><br />
+    <%= f.text_field :mothers_occupation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Phone_Number %><br />
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Email_Address %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Social_Security_Number %><br />
+    <%= f.text_field :social_sucurity_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :PAN %><br />
+    <%= f.text_field :pan %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Document %><br />
+    <%= f.file_field :document %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Profile_Photo %><br />
+    <%= f.file_field :profile_photo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
+</center>
