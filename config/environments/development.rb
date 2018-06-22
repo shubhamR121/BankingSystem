@@ -1,6 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+<<<<<<< HEAD
 
   config.action_mailer.perform_deliveries = true
 
@@ -22,6 +23,8 @@ Rails.application.configure do
 
 
 
+=======
+>>>>>>> 375ebe4f06c505295a33a04d6e69a7d5a8405238
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -52,7 +55,9 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
+
   config.action_mailer.raise_delivery_errors = true
+
 
   config.action_mailer.perform_caching = false
 
@@ -79,6 +84,5 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
