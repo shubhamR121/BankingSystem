@@ -3,6 +3,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 <center>
+
 <div>
   <div class="field">
     <%= f.label :First_Name %><br />
@@ -16,7 +17,7 @@
 
   <div class="field">
     <%= f.label :Password %><br />
-    <%= f.password_field :encrypted_password %>
+    <%= f.password_field :password %>
   </div>
 
   <div class="field">
@@ -70,14 +71,86 @@
   </div>
 
   <div class="field">
-    <%= f.label :Profile_Photo %><br />
+    <%= f.label :Profile_photo %><br />
     <%= f.file_field :profile_photo %>
   </div>
 
+  <h2 align="center" style="color:blue;">Permanent address</h2>
+
+  <%=f.fields_for :parmanent_address, ParmanentAddress.new do |form1| %>
+
+    <div class="field">
+      <%= form1.label :House_number %><br />
+      <%= form1.text_field :house_number %>
+    </div>
+
+    <div class="field">
+      <%= form1.label :Street_number %><br />
+      <%= form1.text_field :street_number %>
+    </div>
+
+    <div class="field">
+      <%= form1.label :Area %><br />
+      <%= form1.text_field :area %>
+    </div>  
+
+    <div class="field">
+      <%= form1.label :City %><br />
+      <%= form1.text_field :city %>
+    </div>
+
+    <div class="field">
+      <%= form1.label :State %><br />
+      <%= form1.text_field :state %>
+    </div>
+
+    <div class="field">
+      <%= form1.label :Country %><br />
+      <%= form1.text_field :country %>
+    </div>
+
+  <% end %>
+
+  <h2 align="center" style="color:blue;">Local address</h2>
+
+  <%=f.fields_for :local_address, LocalAddress.new do |form2| %>
+
+    <div class="field">
+      <%= form2.label :House_number %><br />
+      <%= form2.text_field :house_number %>
+    </div>
+
+    <div class="field">
+      <%= form2.label :Street_number %><br />
+      <%= form2.text_field :street_number %>
+    </div>
+
+    <div class="field">
+      <%= form2.label :Area %><br />
+      <%= form2.text_field :area %>
+    </div>  
+
+    <div class="field">
+      <%= form2.label :City %><br />
+      <%= form2.text_field :city %>
+    </div>
+
+    <div class="field">
+      <%= form2.label :State %><br />
+      <%= form2.text_field :state %>
+    </div>
+
+    <div class="field">
+      <%= form2.label :Country %><br />
+      <%= form2.text_field :country %>
+    </div>
+
+  <% end %>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
 <%= render "users/shared/links" %>
+</div>
 </center>
