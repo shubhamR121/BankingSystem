@@ -1,7 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-<<<<<<< HEAD
 
   config.action_mailer.perform_deliveries = true
 
@@ -12,7 +11,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     user_name:      'sonur0131@gmail.com',
-    password:       '',
+    password:       'shubhamrathore',
     #domain:         ENV['MAIL_HOST'],
     address:       'smtp.gmail.com',
     port:          '587',
@@ -21,10 +20,6 @@ Rails.application.configure do
   }
 
 
-
-
-=======
->>>>>>> 375ebe4f06c505295a33a04d6e69a7d5a8405238
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.

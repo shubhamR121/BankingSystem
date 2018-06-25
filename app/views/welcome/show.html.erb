@@ -1,0 +1,15 @@
+
+<%= @user.id %><br>
+<%= @user.first_name %><br>
+<%= @user.last_name %><br>
+<%= @user.fathers_name %><br>
+<%= @user.mothers_name %><br>
+<%= @user.occupation %><br>
+<%= @user.fathers_occupation %><br>
+<%= @user.mothers_occupation %><br>
+<%= @user.phone_number %><br>
+<%= @user.email %><br>
+<%= @user.social_sucurity_number %><br>
+<%= @user.pan %><br>
+<%= image_tag @user.document.url(:thumb) %><br>
+<%= image_tag @user.profile_photo.url(:thumb) %><br>

@@ -1,2 +1,53 @@
 <h1>Welcome page</h1>
+<table>
+  <tr>
+    <th>id</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Father's name</th>
+    <th>Mother's name</th>
+    <th>Occupation</th>
+    <th>Father's occupation</th>
+    <th>Mother's occupation</th>
+    <th>Phone number</th>
+    <th>Email</th>
+    <th>Aadhar no.</th>
+    <th>PAN</th>
+    <th>Document</th>
+    <th>Photo</th>
+    <th>All details</th>
+  </tr>
 
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= user.id %></td>
+    <td><%= user.first_name %></td>
+    <td><%= user.last_name %></td>
+    <td><%= user.fathers_name %></td>
+    <td><%= user.mothers_name %></td>
+    <td><%= user.occupation %></td>
+    <td><%= user.fathers_occupation %></td>
+    <td><%= user.mothers_occupation %></td>
+    <td><%= user.phone_number %></td>
+    <td><%= user.email %></td>
+    <td><%= user.social_sucurity_number %></td>
+    <td><%= user.pan %></td>
+    <td><%= image_tag user.document.url(:thumb).to_s %></td>
+    <td><%= image_tag user.profile_photo.url(:thumb).to_s  %></td>
+    <td><%= link_to 'show details',welcome_path(user) %></td>
+
+    <% if user.verify %>
+    <td>
+      Verify
+    </td>
+    <% else %>
+      <td>
+      Not Verify
+      <%= link_to "Approve", verified_welcome_path(user), remote: true, class: "btn btn-success btn-sm"  %>
+      </td>
+    <% end %>
+
+  </tr>
+  <% end %>
+
+</table>

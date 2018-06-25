@@ -69,3 +69,6 @@ gem 'bootstrap'
 gem 'jquery-rails'
 
 gem 'carrierwave'
+
+gem 'cancancan'
+gem 'rolify'
