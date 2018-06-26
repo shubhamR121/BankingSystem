@@ -36,17 +36,6 @@
     <td><%= image_tag user.profile_photo.url(:thumb).to_s  %></td>
     <td><%= link_to 'show details',welcome_path(user) %></td>
 
-    <% if user.verify %>
-    <td>
-      Verify
-    </td>
-    <% else %>
-      <td>
-      Not Verify
-      <%= link_to "Approve", verified_welcome_path(user), remote: true, class: "btn btn-success btn-sm"  %>
-      </td>
-    <% end %>
-
   </tr>
   <% end %>
 

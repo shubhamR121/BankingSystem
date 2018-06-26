@@ -13,3 +13,10 @@
 <%= @user.pan %><br>
 <%= image_tag @user.document.url(:thumb) %><br>
 <%= image_tag @user.profile_photo.url(:thumb) %><br>
+
+
+<% if !@user.verify %>
+ <%= link_to "Verify", verify_user_path(@user), class: "btn btn-success" %>
+<% else %>
+ <b>Verified</b>
+<% end %>

@@ -4,7 +4,16 @@
   <%= devise_error_messages! %>
 <center>
 
+
 <div>
+
+  <div class="field form-group">
+   <%= f.label :Select_Bank %>
+   <div class="col-md-8">
+     <%= f.collection_select(:bank_id, Bank.all, :id, :name, :include_blank => "Please select bank") %>
+   </div>
+  </div>
+
   <div class="field">
     <%= f.label :First_Name %><br />
     <%= f.text_field :first_name %>

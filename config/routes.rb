@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   root 'welcome#index'
   devise_for :users
 
-  resources :welcome do
+  resources :welcome
 
-    get 'verified', on: :member
+  resources :users do
+
+    get 'verify', on: :member
 
   end
 
