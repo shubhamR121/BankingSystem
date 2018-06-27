@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_26_150121) do
+ActiveRecord::Schema.define(version: 2018_06_27_135711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
-    t.string "account_name"
+    t.string "account_no"
+    t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
   end
 
   create_table "addresses", force: :cascade do |t|
@@ -35,10 +35,21 @@ ActiveRecord::Schema.define(version: 2018_06_26_150121) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "banknames", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "banks", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+  end
+
+  create_table "beneficiaries", force: :cascade do |t|
+    t.string "name"
+    t.string "account_no"
   end
 
   create_table "local_addresses", force: :cascade do |t|
@@ -91,6 +102,7 @@ ActiveRecord::Schema.define(version: 2018_06_26_150121) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "verify"
+    t.string "bankname"
   end
 
   create_table "users_roles", id: false, force: :cascade do |t|

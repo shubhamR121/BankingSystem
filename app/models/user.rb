@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :addressess, dependent: :destroy 
   has_one :local_address, dependent: :destroy
   has_one :permanent_address, dependent: :destroy
+  has_one :account, dependent: :destroy
+  has_many :beneficiaries, dependent: :destroy
 
   accepts_nested_attributes_for :permanent_address
 
@@ -16,4 +18,10 @@ class User < ApplicationRecord
   mount_uploader :document, ImageUploader
   mount_uploader :profile_photo, ImageUploader
 
+
+  after_create :generate_account_no
+
+  def generate_account_no
+    Account.create!(account_no:(SecureRandom.random_number(9e11) + 1e11).to_i, user_id: self.id)
+  end
 end

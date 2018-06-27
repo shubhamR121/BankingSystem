@@ -7,9 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create([
-  {name: "Axis"},
-  {name: "SBI"},
-  {name: "ICICI"},
-  {name: "Panjab"}
-])
+bank_lists = [
+  "Axis",
+  "SBI",
+  "ICICI",
+  "Panjab"
+]
+
+bank_lists.each do |name|
+  Bankname.create(name: name)
+end

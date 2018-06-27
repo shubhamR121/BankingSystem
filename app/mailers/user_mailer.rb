@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
 
- default from: "bankingsystem@example.com"
+ #default from: "bankingsystem@example.com"
  
  def verify_user(user)
    @user = user
@@ -9,4 +9,11 @@ class UserMailer < ApplicationMailer
    mail(to: @user.email, subject: "Welcome to Banking System")
  end
 
+ def beneficiary_added(user)
+
+  @user = user
+
+  mail(to: @user.email, subject: 'Beneficiary addedd ')
+   
+ end
 end

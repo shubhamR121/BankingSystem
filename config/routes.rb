@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :welcome
 
+  resources :beneficiaries
+
   resources :users do
 
     get 'verify', on: :member

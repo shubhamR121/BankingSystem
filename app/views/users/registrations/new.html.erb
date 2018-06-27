@@ -5,12 +5,13 @@
 <center>
 
 
+
 <div>
 
   <div class="field form-group">
    <%= f.label :Select_Bank %>
-   <div class="col-md-8">
-     <%= f.collection_select(:bank_id, Bank.all, :id, :name, :include_blank => "Please select bank") %>
+   <div>
+     <%= f.collection_select(:bankname, Bankname.all, :name, :name, :include_blank => "Please select bank") %>
    </div>
   </div>
 

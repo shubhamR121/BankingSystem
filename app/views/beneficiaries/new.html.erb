@@ -1,0 +1,14 @@
+<%= form_with model: @beneficiary do |f|%>
+
+<p>
+  <%= f.label :Name %>
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.label :Account_number %>
+  <%= f.text_field :account_no %>
+</p>
+
+  <%= f.submit %>
+<% end %>

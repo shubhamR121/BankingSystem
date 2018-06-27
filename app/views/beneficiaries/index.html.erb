@@ -1,0 +1,15 @@
+<table>
+
+  <tr>
+    <th>Name</th>
+    <th>Account_number</th>
+  </tr>
+
+  <tr>
+    <% @beneficiaries.each do |beneficiary|%>
+      <%= beneficiary.name %>
+      <%= beneficiary.account_no %>
+    <% end %>
+  </tr>
+  
+</table>

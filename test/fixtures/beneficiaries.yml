@@ -2,8 +2,8 @@
 
 one:
   account_no: MyString
-  user_id: MyString
+  name: MyString
 
 two:
   account_no: MyString
-  user_id: MyString
+  name: MyString
