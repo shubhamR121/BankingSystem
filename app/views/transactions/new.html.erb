@@ -1,0 +1,15 @@
+<%= form_with model: @transaction do |f|%>
+
+  <p>
+    <%= f.label :Account_number %>
+    <%= f.text_field :account_no %>
+  </p>
+
+  <p>
+    <%= f.label :Amount %>
+    <%= f.text_field :amount %>
+  </p>
+
+  <%= f.submit %>
+
+<% end %>

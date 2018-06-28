@@ -7,7 +7,8 @@ class User < ApplicationRecord
   has_one :local_address, dependent: :destroy
   has_one :permanent_address, dependent: :destroy
   has_one :account, dependent: :destroy
-  has_many :beneficiaries, dependent: :destroy
+  has_and_belongs_to_many :beneficiaries
+  has_many :transactions
 
   accepts_nested_attributes_for :permanent_address
 

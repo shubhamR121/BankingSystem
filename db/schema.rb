@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_27_135711) do
+ActiveRecord::Schema.define(version: 2018_06_28_131026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_06_27_135711) do
     t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "balance"
   end
 
   create_table "addresses", force: :cascade do |t|
@@ -50,6 +51,12 @@ ActiveRecord::Schema.define(version: 2018_06_27_135711) do
   create_table "beneficiaries", force: :cascade do |t|
     t.string "name"
     t.string "account_no"
+    t.string "user_id"
+  end
+
+  create_table "beneficiaries_users", id: false, force: :cascade do |t|
+    t.bigint "beneficiary_id", null: false
+    t.bigint "user_id", null: false
   end
 
   create_table "local_addresses", force: :cascade do |t|
@@ -70,6 +77,14 @@ ActiveRecord::Schema.define(version: 2018_06_27_135711) do
     t.datetime "updated_at", null: false
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string "account_no"
+    t.float "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -12,9 +12,11 @@ class BeneficiariesController < ApplicationController
    account_no = params[:beneficiary].values[1]
    account = Account.find_by_account_no(account_no)
 
+
    if account && account.user.verify
      Beneficiary.create!(beneficiary_params)
      UserMailer.beneficiary_added(current_user).deliver
+     current_user.beneficiaries << Beneficiary.last
      redirect_to  beneficiaries_path
    else
      redirect_to new_beneficiary_path
@@ -25,7 +27,7 @@ class BeneficiariesController < ApplicationController
  private
 
  def beneficiary_params
-   params.require(:beneficiary).permit(:name, :account_no)
+   params.require(:beneficiary).permit(:name, :account_no).merge({user_id: current_user.id})
  end
 
 end

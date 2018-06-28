@@ -14,6 +14,6 @@ class UserMailer < ApplicationMailer
   @user = user
 
   mail(to: @user.email, subject: 'Beneficiary addedd ')
-   
+  
  end
 end

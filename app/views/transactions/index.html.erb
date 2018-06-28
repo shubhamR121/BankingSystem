@@ -1,0 +1,15 @@
+<table>
+
+  <tr>
+    <th>Account_number</th>
+    <th>Amount</th>
+  </tr>
+
+  <tr>
+    <% @transactions.each do |transaction|%>
+      <%= transaction.account_no %>
+      <%= transaction.amount %>
+    <% end %>
+  </tr>
+  
+</table>
