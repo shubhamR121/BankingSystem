@@ -10,6 +10,11 @@
     <%= f.text_field :amount %>
   </p>
 
+  <p>
+    <input type="text" id="transaction_otp">
+    <%= link_to 'Generate OTP', generate_otp_transaction_path(current_user.id),remote: true %>
+  </p>
+
   <%= f.submit %>
 
 <% end %>

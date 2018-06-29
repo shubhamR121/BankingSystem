@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   resources :beneficiaries
 
-  resources :transactions
+  resources :transactions do
+    get 'generate_otp', on: :member 
+  end
 
   resources :users do
 
